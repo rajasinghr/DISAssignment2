@@ -10,7 +10,7 @@ namespace DIS_ClassAssigment2
     {
         static void Main(string[] args)
         {
-            //comment
+            
         }
     }
 }
