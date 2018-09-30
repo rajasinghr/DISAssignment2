@@ -52,16 +52,21 @@ namespace Assignment_2
     {
             // write your implementation here
             // write your implementation here
-            StockNode current = head;
+
+
             if (this.IsEmpty())
             {
                 Console.WriteLine("List is empty");
 
             }
-            while (current != null)
+            else
             {
-                Console.WriteLine(current.StockHolding);
-                current = current.Next;
+                StockNode current = this.head;
+                while (current != null)
+                {
+                    Console.WriteLine(current.StockHolding);
+                    current = current.Next;
+                }
             }
         }
   }
