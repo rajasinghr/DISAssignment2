@@ -25,11 +25,23 @@ namespace Assignment_2
     //return type  : int
     public int Similarity(StockList listToCompare)
     {
-      int similarityIndex = 0;
-
-      // write your implementation here
-
-      return similarityIndex;
+            int similarityIndex = 0;
+            StockNode current1 = head;
+            StockNode current2 = listToCompare.head;
+            while (current1 != null)
+            {
+                while (current2 != null)
+                {
+                    if (current1.StockHolding.Name == current2.StockHolding.Name)
+                    {
+                        similarityIndex = similarityIndex + 1;
+                    }
+                    current2 = current2.Next;
+                }
+                current2 = listToCompare.head;
+                current1 = current1.Next;
+            }
+            return similarityIndex;
     }
 
     //param        : NA
