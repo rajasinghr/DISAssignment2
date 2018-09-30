@@ -12,19 +12,11 @@ namespace Assignment_2
     //return type  : decimal
     public decimal Value()
     {
-            decimal value = 0.0m;
-            StockNode current = head;
-            if (this.IsEmpty())
-            {
-                Console.WriteLine("List is empty");
+      decimal value = 0.0m;
 
-            }
-            while (current != null)
-            {
-                value = value + (current.StockHolding.CurrentPrice) * (current.StockHolding.Holdings);
-                current = current.Next;
-            }
-            return value;
+      // write your implementation here
+
+      return value;
     }
 
     //param  (StockList) listToCompare     : StockList which has to comared for similarity index
@@ -34,20 +26,10 @@ namespace Assignment_2
     public int Similarity(StockList listToCompare)
     {
             int similarityIndex = 0;
-            StockNode current2 = null;
-            if (this.IsEmpty())
-            {
-                
-                return 0;
-            }
-            if (listToCompare.IsEmpty())
-            {
-                return 0;
-            }
             StockNode current1 = head;
+            StockNode current2 = listToCompare.head;
             while (current1 != null)
             {
-                current2 = listToCompare.head;   
                 while (current2 != null)
                 {
                     if (current1.StockHolding.Name == current2.StockHolding.Name)
@@ -56,6 +38,7 @@ namespace Assignment_2
                     }
                     current2 = current2.Next;
                 }
+                current2 = listToCompare.head;
                 current1 = current1.Next;
             }
             return similarityIndex;
@@ -69,7 +52,8 @@ namespace Assignment_2
     {
             // write your implementation here
             // write your implementation here
-            
+
+
             if (this.IsEmpty())
             {
                 Console.WriteLine("List is empty");
@@ -77,7 +61,7 @@ namespace Assignment_2
             }
             else
             {
-                StockNode current = head;
+                StockNode current = this.head;
                 while (current != null)
                 {
                     Console.WriteLine(current.StockHolding);

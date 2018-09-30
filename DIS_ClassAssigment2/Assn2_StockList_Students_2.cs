@@ -12,11 +12,37 @@ namespace Assignment_2
     //return type  : StockList
     public StockList MergeList(StockList listToMerge)
     {
-      StockList resultList = new StockList();
+            StockList resultList = new StockList();
+            if (this.IsEmpty())
+            {
+                Console.WriteLine("List is empty");
 
-      // write your implementation here
+            }
+            else { 
+            StockNode current1 = this.head;
 
-      return resultList;
+            
+            while (current1 != null)
+            {
+                resultList.AddStock(current1.StockHolding);
+                current1 = current1.Next;
+            }
+            }
+            if (this.IsEmpty())
+            {
+                Console.WriteLine("List is empty");
+
+            }
+            else { 
+            StockNode current2 = listToMerge.head;
+            
+            while (current2 != null)
+            {
+                resultList.AddStock(current2.StockHolding);
+                current2 = current2.Next;
+            }
+            }
+            return resultList;
     }
 
     //param        : NA
@@ -25,11 +51,26 @@ namespace Assignment_2
     //return type  : Stock
     public Stock MostShares()
     {
-      Stock mostShareStock = null;
+            Stock mostShareStock = null;
+            StockNode current = this.head;
+            if (this.IsEmpty())
+            {
+                Console.WriteLine("List is empty");
 
-      // write your implementation here
+            }
+            mostShareStock = current.StockHolding;
+            current = current.Next;
+            while (current != null)
+            {
+                if (current.StockHolding.Holdings> mostShareStock.Holdings )
+                {
 
-      return mostShareStock;
+                    mostShareStock = current.StockHolding;
+                }
+                current = current.Next;
+            }
+            Console.WriteLine(mostShareStock);
+            return mostShareStock;
     }
 
     //param        : NA
@@ -40,9 +81,20 @@ namespace Assignment_2
     {
       int length = 0;
 
-      // write your implementation here
+            if (this.IsEmpty())
+            {
+                Console.WriteLine("List is empty");
 
-      return length;
+            }
+            
+            StockNode current = this.head;
+            while (current != null)
+            {
+                length++;
+                current = current.Next;
+            }
+
+            return length;
     }
   }
 }
