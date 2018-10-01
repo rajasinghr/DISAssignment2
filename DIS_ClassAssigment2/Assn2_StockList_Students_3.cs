@@ -13,16 +13,16 @@ namespace Assignment_2
         public decimal Value()
         {
             decimal value = 0.0m;
-            StockNode current = head;
-            if (this.IsEmpty())
+            if (this.IsEmpty())  // Checking if the list is empty
             {
-                Console.WriteLine("List is empty");
+                Console.WriteLine("There are no stocks present");
 
             }
+            StockNode current = head;  // Assigning the head value to current
             while (current != null)
             {
-                value = value + (current.StockHolding.CurrentPrice) * (current.StockHolding.Holdings);
-                current = current.Next;
+                value = value + (current.StockHolding.CurrentPrice) * (current.StockHolding.Holdings); // Calculating the value
+                current = current.Next; // moving to next node
             }
             return value;
         }
@@ -37,22 +37,21 @@ namespace Assignment_2
             StockNode current2 = null;
             if (this.IsEmpty())
             {
-
-                return 0;
+                return 0;  // returning result as 0 if list is empty
             }
             if (listToCompare.IsEmpty())
             {
-                return 0;
+                return 0;  // returning result as 0 if list is empty
             }
             StockNode current1 = head;
             while (current1 != null)
             {
-                current2 = listToCompare.head;
+                current2 = listToCompare.head;  // assigning  the header of second list to current 2
                 while (current2 != null)
                 {
                     if (current1.StockHolding.Name == current2.StockHolding.Name)
                     {
-                        similarityIndex = similarityIndex + 1;
+                        similarityIndex = similarityIndex + 1; // comparing the name of stock holdings and incrementing the index if true
                     }
                     current2 = current2.Next;
                 }
@@ -67,18 +66,16 @@ namespace Assignment_2
     //return type  : NA
     public void Print()
     {
-
-            if (this.IsEmpty())
+            if (this.IsEmpty()) // Checking if there are stocks present or not
             {
-                Console.WriteLine("List is empty");
-
+                Console.WriteLine("There are no stocks present");
             }
             else
             {
                 StockNode current = head;
                 while (current != null)
                 {
-                    Console.WriteLine(current.StockHolding);
+                    Console.WriteLine(current.StockHolding); // printing the stocks based on client portfolio
                     current = current.Next;
                 }
             }
