@@ -55,22 +55,23 @@ namespace DIS_ClassAssigment2
             ////Console.WriteLine();
 
             //Console.WriteLine("Similarity Index for Client-1 and Client-2 :" + client1.StockList.Similarity(client2.StockList));
-            Console.WriteLine("Client 1");
+            Console.WriteLine("**************************Client-1 Stocks sorted by Name*****************************************");
             client1.StockList.SortByName();
             client1.StockList.Print();
-            Console.WriteLine("Client 2");
-            client2.StockList.SortByName();
+            Console.WriteLine();
+            Console.WriteLine("**************************Client-2 Stocks sorted by Value****************************************");
+            client2.StockList.SortByValue();
             client2.StockList.Print();
-            Console.WriteLine("**************************Client-1,Client -2 Merged Portfolio*****************************************");
-            StockList mergedPortfolio = client2.StockList.MergeList(client1.StockList);
-            mergedPortfolio.Print();
-            mergedPortfolio.MostShares();
-            Console.WriteLine("Sorted results");
-            mergedPortfolio.SortByName();
-            mergedPortfolio.Print();
-            mergedPortfolio.SortByValue();
-            mergedPortfolio.Print();
-            Console.WriteLine("Similarity Index for Client-1 and Client-2 :" + mergedPortfolio.Similarity(client2.StockList));
+            //Console.WriteLine("**************************Client-1,Client -2 Merged Portfolio*****************************************");
+            //StockList mergedPortfolio = client2.StockList.MergeList(client1.StockList);
+            //mergedPortfolio.Print();
+            //mergedPortfolio.MostShares();
+            //Console.WriteLine("Sorted results");
+            //mergedPortfolio.SortByName();
+            //mergedPortfolio.Print();
+            //mergedPortfolio.SortByValue();
+            //mergedPortfolio.Print();
+            //Console.WriteLine("Similarity Index for Client-1 and Client-2 :" + mergedPortfolio.Similarity(client2.StockList));
             Console.ReadLine();
         }
     }

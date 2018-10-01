@@ -221,13 +221,13 @@ namespace Assignment_2
 
 
         // FOR STUDENTS
-
         //param        : NA
         //summary      : Sort the list by descending number of holdings
         //return       : NA
         //return type  : NA
         public void SortByValue()
         {
+            //Checking if the list is empty or not
             if (this.IsEmpty())
             {
                 Console.WriteLine("Client does not have any stock");
@@ -259,6 +259,7 @@ namespace Assignment_2
         //return type  : NA
         public void SortByName()
         {
+            //checking whether the list is empty or not
             if (this.IsEmpty())
             {
                 Console.WriteLine("Client does not have any stock");
