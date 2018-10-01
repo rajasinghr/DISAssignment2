@@ -228,9 +228,30 @@ namespace Assignment_2
     //return type  : NA
     public void SortByValue()
     {
-      // write your implementation here
+            if (this.IsEmpty())
+            {
+                Console.WriteLine("Client does not have any stock");
+            }
+            else
+            {
+                StockNode innernode = null;
+                int stockListLength = this.Length();
+                while (stockListLength > 0)
+                {
+                    innernode = this.head;
+                    while (innernode.Next != null)
+                    {
+                        if (innernode.StockHolding.Holdings < innernode.Next.StockHolding.Holdings)
+                        {
+                            innernode = Swap(innernode.StockHolding);
+                        }
+                        innernode = innernode.Next;
+                    }
+                    stockListLength--;
+                }
+            }
 
-    }
+        }
 
     //param        : NA
     //summary      : Sort the list alphabatically
@@ -238,8 +259,30 @@ namespace Assignment_2
     //return type  : NA
     public void SortByName()
     {
-      // write your implementation here
+            if (this.IsEmpty())
+            {
+                Console.WriteLine("Client does not have any stock");
+            }
+            else
+            {
+                StockNode innernode = null;
+                int stockListLength = this.Length();
+                while (stockListLength > 0)
+                {
+                    innernode = this.head;
+                    while (innernode.Next != null)
+                    {
+                        if (innernode.StockHolding.Name.CompareTo(innernode.Next.StockHolding.Name) < 0)
+                        {
+                            innernode = Swap(innernode.StockHolding);
+                        }
+                        innernode = innernode.Next;
+                    }
+                    stockListLength--;
+                }
+            }
 
+
+        }
     }
-  }
 }
