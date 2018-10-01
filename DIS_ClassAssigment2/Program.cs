@@ -51,7 +51,7 @@ namespace DIS_ClassAssigment2
             ////client2.StockList.Print();
             ////client2.StockList.SortByName();
             ////Console.WriteLine("Portfolio sorted in alphabatical order for client 2:");
-            client2.StockList.Print();
+            //client2.StockList.Print();
             ////Console.WriteLine();
 
             //Console.WriteLine("Similarity Index for Client-1 and Client-2 :" + client1.StockList.Similarity(client2.StockList));
@@ -65,6 +65,11 @@ namespace DIS_ClassAssigment2
             StockList mergedPortfolio = client2.StockList.MergeList(client1.StockList);
             mergedPortfolio.Print();
             mergedPortfolio.MostShares();
+            Console.WriteLine("Sorted results");
+            mergedPortfolio.SortByName();
+            mergedPortfolio.Print();
+            mergedPortfolio.SortByValue();
+            mergedPortfolio.Print();
             Console.WriteLine("Similarity Index for Client-1 and Client-2 :" + mergedPortfolio.Similarity(client2.StockList));
             Console.ReadLine();
         }
